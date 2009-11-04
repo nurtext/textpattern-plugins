@@ -1,0 +1,84 @@
+h1. *ckr_image_count* - Counts images and provides a conditional tag
+
+This plugin provides two new tags:
+* @<txp:ckr_image_count />@ - output the count of all images
+* @<txp:ckr_if_image_count></txp:ckr_if_image_count>@ - a conditional tag
+
+p. &nbsp;
+
+h2. *Counting images with ckr_image_count*
+
+Place the @<txp:ckr_image_count />@  tag wherever you want the count to appear. The tag supports one attribute called @category@. If set to a category's name, only images within will be counted.
+
+*Examples:*
+
+@<txp:ckr_image_count />@ - displays the count of all images
+@<txp:ckr_image_count category="mycategory" />@ - displays the count of images within given category
+
+p. &nbsp;
+
+h2. *Using the conditional tag ckr_if_image_count*
+
+Place the @<txp:ckr_if_image_count></txp:ckr_if_image_count>@ tags wherever you want to check for the given condition. The tag supports the @category@ attribute as well and in addition to it the following four: @min@, @max@, @equal@, @not@. At least one of them must be given, only @min@ and @max@ can be combined. Furthermore it offers support for Textpattern's internal @<txp:else />@ tag.
+
+*Simple examples:*
+
+bc. <txp:ckr_if_image_count min="3">
+    At least 3 images available.
+</txp:ckr_if_image_count>
+
+bc. <txp:ckr_if_image_count max="5">
+    There are not more than 5 images available.
+</txp:ckr_if_image_count>
+
+*Examples for combining @category@ and any condition:*
+
+bc. <txp:ckr_if_image_count category="mycategory" equal="5">
+    Category "mycategory" contains 5 images.
+</txp:ckr_if_image_count>
+
+bc. <txp:ckr_if_image_count category="mycategory" not="5">
+    Category "mycategory" contains anything but 5 images.
+</txp:ckr_if_image_count>
+
+*Examples for combining @min@ and @max@ attribute:*
+
+bc. <txp:ckr_if_image_count min="1" max="5">
+    There's at least more than 1 image, but less (or equal) than 5 images.
+</txp:ckr_if_image_count>
+
+bc. <txp:ckr_if_image_count category="mycategory" min="1" max="5">
+    Category "mycategory" contains more than 1 image, but less (or equal) than 5 images.
+</txp:ckr_if_image_count>
+
+
+*Example for using the @txp:else@ block:*
+
+bc. <txp:ckr_if_image_count equal="7">
+    There are exactly 7 images available.
+<txp:else />
+    There are anything but 7 images available.
+</txp:ckr_if_image_count>
+
+p. &nbsp;
+
+h2. *Combining ckr_if_image_count with ckr_if_image_count*
+
+Of course you can combine both tags in case you need to master a complex situation. Take a look at the following example to get a brief overview of what can be accomplished.
+
+*Example:*
+
+bc. <txp:ckr_if_image_count category="mycategory" min="3">
+     Category "mycategory" contains at least <txp:ckr_image_count category="mycategory" /> images.
+<txp:else />
+    Category "mycategory" doesn't contain enough images.
+    At least 3 are needed.
+</txp:ckr_if_image_count>
+
+p. &nbsp;
+
+h2. *About this plugin*
+
+Author: "Cedric Kastner":mailto:cedric@nur-text.de?subject=ckr_image_count_v0.1
+Version: 0.1
+Last modification: 2009/07/23, 13:23 CEST
