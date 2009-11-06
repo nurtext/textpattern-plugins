@@ -1,4 +1,5 @@
-These Textpattern plugins are sourcecode only and must first be "compiled" for use.
-
+These Textpattern plugins are sourcecode only and must first be "compiled" for usage.
 This can be accomplished using a textpattern plugin called "ied_plugin_composer".
 http://textpattern.org/plugins/588/ied_plugin_composer
+
+Maybe I'll add pre-compiled and ready to download packages later :)
