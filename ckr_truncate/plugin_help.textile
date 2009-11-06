@@ -1,0 +1,23 @@
+h1. *ckr_truncate* - Truncates a given string to a predefined length
+
+This plugin a single tag:
+* @<txp:ckr_truncate></txp:ckr_truncate>@
+
+p. &nbsp;
+
+h2. *Truncating text*
+
+Place the @<txp:ckr_truncate></txp:ckr_truncate>@  tag wherever you want the truncated text to appear. The tag supports two attributes called @length@ and @etc@. Per default @length@ is set to 90 and @etc@ is set to "&hellip;".
+
+*Examples:*
+
+@<txp:ckr_truncate>Place your long text here...</txp:ckr_truncate>@ - truncates the text by a length of 90 chars and adds "…" to the end
+@<txp:ckr_truncate length="40" etc=" [...]">Place your long text here...</txp:ckr_truncate>@ - truncated the text by a length of 40 chars and adds " [...]" to the end
+
+p. &nbsp;
+
+h2. *About this plugin*
+
+Author: "Cedric Kastner":mailto:cedric@nur-text.de
+Version: 1.0
+Last modified: 2009/11/06, 14:57 CET

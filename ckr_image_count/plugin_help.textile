@@ -79,6 +79,6 @@ p. &nbsp;
 
 h2. *About this plugin*
 
-Author: "Cedric Kastner":mailto:cedric@nur-text.de?subject=ckr_image_count_v0.1
-Version: 0.1
-Last modification: 2009/07/23, 13:23 CEST
+Author: "Cedric Kastner":mailto:cedric@nur-text.de
+Version: 1.0
+Last modified: 2009/11/06, 14:57 CET

@@ -2,11 +2,11 @@
 /**
  * Textpattern plugin: ckr_image_count
  *
- * Counts images and provides a conditional tag to check if there are X images within category Y
+ * Counts images and provides a conditional tag
  * 
- * @package		textpatter-plugins
+ * @package		textpattern-plugins
  * @copyright	(c) 2009, all rights reserved
- * @author		Cedric Kastner <cedric.kastner@gpdevelopment.de>
+ * @author		Cedric Kastner <cedric@nur-text.de>
  * @version		1.0
  */
 
@@ -36,8 +36,7 @@ function ckr_if_image_count($atts, $thing)
 	// Count the images in specified category if given or globally
 	$count = ($category) ? intval(ckr_image_count(array('category' => $category))) : intval(ckr_image_count());
 	
-	// Instead of almost unreadable if-else syntax...
-	// we use this clever true-switch/case-if counstruct :)
+	// Instead of almost unreadable if-else syntax, we use this clever switch-true/case-if counstruct
 	switch (true)
 	{
 		case ($min && !$max && !$equal && !$not): // Is greater than min value
